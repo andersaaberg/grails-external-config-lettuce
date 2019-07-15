@@ -71,6 +71,9 @@ dependencies {
     testCompile "org.seleniumhq.selenium:selenium-support:3.14.0"
     testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:3.14.0"
     testRuntime "org.seleniumhq.selenium:selenium-firefox-driver:3.14.0"
+    compile 'io.micronaut.configuration:micronaut-redis-lettuce:1.1.0'
+    testCompile "io.micronaut:micronaut-http-client"
+    testCompile 'com.github.kstyrc:embedded-redis:0.6'    
 }
 
 bootRun {
