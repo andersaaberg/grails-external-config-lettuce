@@ -135,5 +135,9 @@ environments:
                 testOnReturn: false
                 jdbcInterceptors: ConnectionState
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
-redis:
-    uri:    redis://localhost:9093
+#redis:
+#    uri:    redis://localhost:9093
+grails:
+  config:
+    locations:
+      - classpath:my-config.groovy
