@@ -75,12 +75,20 @@ dependencies {
     provided files('external-config')
     compile 'io.micronaut.configuration:micronaut-redis-lettuce:1.1.0'
     testCompile "io.micronaut:micronaut-http-client"
-    testCompile 'com.github.kstyrc:embedded-redis:0.6'    
+    testCompile 'com.github.kstyrc:embedded-redis:0.6'
+    compile "io.micronaut:micronaut-runtime-groovy:1.1.1" // so micronaut can read .groovy config files
+}
+
+integrationTest {
+    jvmArgs(
+            '-Dmicronaut.config.files=classpath:my-config.groovy'
+    )
 }
 
 bootRun {
     jvmArgs(
-        '-Dspring.output.ansi.enabled=always', 
+        '-Dmicronaut.config.files=classpath:my-config.groovy',
+        '-Dspring.output.ansi.enabled=always',
         '-noverify', 
         '-XX:TieredStopAtLevel=1',
         '-Xmx1024m')
